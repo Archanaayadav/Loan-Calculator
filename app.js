@@ -57,7 +57,25 @@ function calculateResults(e){
 
 // Show Error
 function showError(error){
- 
+  // Create a div 
+  const errorDiv = document.createElement('div');
+
+  // Get elements  - for displaying error div in our dom having class card and above our heading having class heading
+  const card = document.querySelector('.card');
+  const heading = document.querySelector('.heading');
+
+  // Add class - bootsrtap classes - alert(to show alert), alert-danger(to make red)
+  errorDiv.className = 'alert alert-danger';
+
+  // Create text node and append to div
+  errorDiv.appendChild(document.createTextNode(error));
+
+  //Insret card above heading - by calling parent card
+  card.insertBefore(errorDiv, heading);
+
+  // Clear error after 3 sec
+  setTimeout(clearError, 3000);  // setTimeout(function, time in ms) ;  3000ms = 3s
+  
  // Hide results
  document.getElementById('results').style.display = 'none';
 
@@ -65,3 +83,7 @@ function showError(error){
  document.getElementById('loading').style.display = 'none';
 }
 
+// Clear Error
+function clearError(){
+  document.querySelector('.alert').remove();
+}
