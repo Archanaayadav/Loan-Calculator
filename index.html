@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  <title>Loan Calculator</title>
+  <style>
+    #loading,
+    #results {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="bg-secondary">
+  <div class="container">
+    <!--center auto margin-->
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <!--grid 6 columm div(col-md-6), push to middle by margin auto on both side (mx-auto)-->
+        <div class="card card-body text-center mt-4">
+          <!--mt-5 for some margin on top-->
+          <h1 class="heading display-5 pb-3">Loan Calculator</h1>
+          <!--font size for display, pb for padding bottom-->
+          <form id="loan-form">
+
+            <div class="form-group">
+              <!--labels and input are wrapped in form group-->
+              <div class="input-group">
+                <!--to have signs on the left of actual input-->
+                <span class="input-group-addon">$</span>
+                <input type="number" id="amount" class="form-control" placeholder="Loan Amount">
+                <!--form-control for some adding, display block-->
+              </div>
+            </div>
+
+            <div class="form-group">
+              <!--labels and input are wrapped in form group-->
+              <div class="input-group">
+                <!--to have signs on the left of actual input-->
+                <span class="input-group-addon">%</span>
+                <input type="number" id="interest" class="form-control" placeholder="Interest">
+                <!--form-control for some adding, display block-->
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input type="number" name="years" id="years" class="form-control" placeholder="Years to Repay">
+            </div>
+
+            <div class="form-group">
+              <input type="submit" value="C A L C U L A T E" class="btn btn-dark btn-block">
+              <!--btn-block to make block level element-->
+            </div>
+          </form>
+
+          <!-- LOADER HERE -->
+          <div id="loading">
+            <img src="./img/loading.gif" alt="loading-image">
+          </div>
+
+          <!-- RESULTS -->
+          <div id="results" class="pt-4">
+            <h5>Calculated Results</h5>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">Monthly Payment</span>
+                <input type="number" name="payment" id="Mpayment" class="form-control" disabled>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">Total Payment</span>
+                <input type="number" name="total" id="Tpayment" class="form-control" disabled>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">Total Interest</span>
+                <input type="number" name="interest" id="Tinterest" class="form-control" disabled>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
